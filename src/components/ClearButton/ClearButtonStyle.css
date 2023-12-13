@@ -1,0 +1,21 @@
+.feat-btn {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  transition: transform 150ms, color 150ms;
+}
+.btn {
+  cursor: pointer;
+}
+.btn:hover {
+  transform: scale(0.99);
+}
+.btn:active {
+  transform: scale(1.01);
+}
+.clear-all-btn:hover {
+  color: red;
+}
