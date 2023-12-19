@@ -55,7 +55,7 @@ const data: Data = {
     },
     {
       major: "Social Media Producer",
-      institution: "Pixelpoint Hive",
+      institution: "Alise",
       startDate: "2024",
       endDate: "2026",
       desc: "Organizes all social media posts for the editorial department Approves all content to be posted on social media Engages with readers and clients online.",
@@ -68,4 +68,43 @@ const data: Data = {
     "123 Anywhere St., Any City",
   ],
 }
-export default data
+const emptyData: Data = {
+  header: {
+    name: "",
+    role: "",
+    desc: "",
+  },
+  skill: ["", "", "", ""],
+  education: [
+    {
+      major: "",
+      institution: "",
+      startDate: "",
+      endDate: "",
+    },
+    {
+      major: "",
+      institution: "",
+      startDate: "",
+      endDate: "",
+    },
+  ],
+  experience: [
+    {
+      major: "",
+      institution: "",
+      startDate: "",
+      endDate: "",
+      desc: "",
+    },
+    {
+      major: "",
+      institution: "",
+      startDate: "",
+      endDate: "",
+      desc: "",
+    },
+  ],
+  contact: ["", "", "", ""],
+}
+export { data, emptyData }

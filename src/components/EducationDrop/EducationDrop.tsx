@@ -84,18 +84,19 @@ export default function EducationDrop(props: EducationDropProps) {
       </button>
       {isOpenMenu && (
         <div className="drop-animate">
-          {data.map((data, index) => {
-            return (
-              <button
-                key={index}
-                className="edu-list add"
-                onClick={() => handleChangeSchool(index + 1)}
-              >
-                <p>{data.institution}</p>
-                <i className="fa-solid fa-angle-down"></i>
-              </button>
-            )
-          })}
+          {data[0].major !== "" &&
+            data.map((data, index) => {
+              return (
+                <button
+                  key={index}
+                  className="add-list add"
+                  onClick={() => handleChangeSchool(index + 1)}
+                >
+                  <p>{data.institution}</p>
+                  <i className="fa-solid fa-angle-down"></i>
+                </button>
+              )
+            })}
           <button className="open-form">
             <div className="open-btn" onClick={handleDropForm}>
               <i className="fa-solid fa-plus"></i>

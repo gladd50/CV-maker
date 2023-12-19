@@ -43,12 +43,36 @@
   gap: 1rem;
   align-items: center;
 }
-.edu-list {
+.add-list {
   border-radius: 0;
   font-size: 1rem;
   padding: 0.5rem 1.5rem;
 }
 .drop-animate {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.drop-animate-exp {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.drop-animate-cont {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.drop-animate-skill {
   transform: translateY(-20px);
   opacity: 0;
   transition: opacity 300ms, transform 300ms;

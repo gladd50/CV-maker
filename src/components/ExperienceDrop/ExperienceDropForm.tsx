@@ -6,37 +6,42 @@ type Education = {
   startDate: string
   endDate: string
 }
-type EducationDropFromProps = {
-  data: Education
-  onSave: (sv: Education) => void
+type Experience = Education & {
+  desc: string
+}
+type ExperienceDropFromProps = {
+  data: Experience
+  onSave: (sv: Experience) => void
   onCancel: () => void
   onDelete: (idx: number) => void
   dataIdx: number
 }
 
-export default function EducationDropForm(props: EducationDropFromProps) {
+export default function ExperienceDropForm(props: ExperienceDropFromProps) {
   const { data, onSave, onCancel, onDelete, dataIdx } = props
-  const { major, institution, startDate, endDate } = data
+  const { major, institution, startDate, endDate, desc } = data
   const [majorVal, setMajorVal] = useState(major)
   const [instVal, setInstVal] = useState(institution)
   const [startDVal, setStartDVal] = useState(startDate)
   const [endDVal, setEndDVal] = useState(endDate)
+  const [descVal, setDescVal] = useState(desc)
   return (
     <form
-      className="personal-form drop-animate form-personal-cont add-form"
+      className="personal-form drop-animate-exp form-personal-cont add-form"
       onSubmit={(e) => {
         e.preventDefault()
-        const formVal: Education = {
+        const formVal: Experience = {
           major: majorVal,
           institution: instVal,
           startDate: startDVal,
           endDate: endDVal,
+          desc: descVal,
         }
         onCancel()
         onSave(formVal)
       }}
     >
-      <label htmlFor="major">Major</label>
+      <label htmlFor="major">Role</label>
       <input
         type="text"
         name="edu"
@@ -44,7 +49,7 @@ export default function EducationDropForm(props: EducationDropFromProps) {
         value={majorVal}
         onChange={(e) => setMajorVal(e.target.value)}
         required
-        placeholder="Enter Major"
+        placeholder="Enter Role"
       />
       <label htmlFor="institution">Institution</label>
       <input
@@ -76,6 +81,15 @@ export default function EducationDropForm(props: EducationDropFromProps) {
         required
         placeholder="Enter End Year"
       />
+      <label htmlFor="description">Description</label>
+      <textarea
+        name="personal"
+        id="description"
+        rows={3}
+        placeholder="Enter Job description"
+        onChange={(e) => setDescVal(e.target.value)}
+        value={descVal}
+      ></textarea>
       <label className="btn-cont">
         <input type="submit" className="form-btn btn" value="Save" />
         <button className="form-btn btn" onClick={onCancel}>
