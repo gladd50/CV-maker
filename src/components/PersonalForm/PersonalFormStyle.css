@@ -1,12 +1,14 @@
 input[type="text"],
-textarea {
+textarea,
+input[type="number"] {
   border: 1px solid #fff;
   border-radius: 1rem;
   background-color: #f5f5f5;
   padding: 0.5rem;
 }
 input[type="text"]:focus,
-textarea:focus {
+textarea:focus,
+input[type="number"]:focus {
   border: 1px solid rgb(105, 105, 255);
   outline: none;
 }
@@ -21,4 +23,9 @@ textarea:focus {
   background-color: #fff;
   padding: 1rem;
   border-radius: 1rem;
+}
+.form-btn {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
 }

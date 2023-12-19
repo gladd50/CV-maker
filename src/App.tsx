@@ -15,9 +15,16 @@ import data from "./utils/defaultData.ts"
 import { ChangeEvent, useState } from "react"
 
 function App() {
+  type Education = {
+    major: string
+    institution: string
+    startDate: string
+    endDate: string
+  }
   const [name, setName] = useState<string>(data.header.name)
   const [role, setRole] = useState<string>(data.header.role)
   const [personalDesc, setPersonalDesc] = useState<string>(data.header.desc)
+  const [education, setEducation] = useState<Education[]>(data.education)
 
   const handleChangeName = (e: ChangeEvent<HTMLInputElement>) =>
     setName(e.target.value)
@@ -44,7 +51,10 @@ function App() {
           desc={personalDesc}
         ></PersonalForm>
         <SkillDrop></SkillDrop>
-        <EducationDrop></EducationDrop>
+        <EducationDrop
+          data={education}
+          setEdu={(val: Education[]) => setEducation(val)}
+        ></EducationDrop>
         <ExperienceDrop></ExperienceDrop>
         <ContactDrop></ContactDrop>
       </section>
@@ -55,7 +65,7 @@ function App() {
           desc={personalDesc}
         ></PersonalPort>
         <SkillPort></SkillPort>
-        <EducationPort></EducationPort>
+        <EducationPort eduData={education}></EducationPort>
         <ExperiencePort></ExperiencePort>
         <ContactPort></ContactPort>
       </section>

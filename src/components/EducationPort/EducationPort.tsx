@@ -1,24 +1,30 @@
-export default function EducationPort() {
+type Education = {
+  major: string
+  institution: string
+  startDate: string
+  endDate: string
+}
+
+type EducationPortProps = {
+  eduData: Education[]
+}
+
+export default function EducationPort(props: EducationPortProps) {
+  const { eduData } = props
   return (
     <div className="educations-port-cont list-port">
       <div className="header">
         <h3 className="educations-header">Education</h3>
       </div>
       <ul className="educations-list" role="list">
-        <li className="educations">
-          <h3 className="educations-major">
-            Bachelor of arts, major in communication
-          </h3>
-          <p className="educations-institution">
-            University of dundee | 2019 - 2022
-          </p>
-        </li>
-        <li className="educations">
-          <h3 className="educations-major">Course in Digital Marketing</h3>
-          <p className="educations-institution">
-            University of Mac Lane and Knights| 2022 - 2024
-          </p>
-        </li>
+        {eduData.map((data, idx) => (
+          <li className="educations" key={idx}>
+            <h3 className="educations-major">{data.major}</h3>
+            <p className="educations-institution">
+              {data.institution} | {data.startDate} - {data.endDate}
+            </p>
+          </li>
+        ))}
       </ul>
     </div>
   )

@@ -7,14 +7,65 @@
   border-radius: 1rem;
   border: none;
   flex: 1;
+  transition: transform 150ms, border-radius 150ms;
+  cursor: pointer;
+}
+.open-form {
+  display: flex;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+  border-radius: 0 0 1rem 1rem;
+  border: none;
+  flex: 1;
   transition: transform 150ms;
+}
+.open-btn {
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  border-radius: 25px;
+  border: 5px solid #f3f4f6;
+  font-size: 14px;
+  cursor: pointer;
 }
 .drop {
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
 }
 .btn-cont {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+.edu-list {
+  border-radius: 0;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+}
+.drop-animate {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+.drop-open {
+  border-radius: 1rem 1rem 0 0;
+}
+.fa-solid {
+  transition: transform 300ms;
+}
+.rotate {
+  transform: rotateZ(180deg);
 }

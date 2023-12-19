@@ -8,11 +8,11 @@
 .header {
   min-width: 100px;
 }
-.educations:first-child {
-  margin-bottom: 0.5rem;
+.educations {
+  margin-bottom: 0.15rem;
 }
-.works:first-child {
-  margin-bottom: 0.5rem;
+.works {
+  margin-bottom: 0.15rem;
 }
 .skill-list {
   list-style-position: inside;
